@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js - Express.js</title>
+    <style>
+      img {
+        max-width: 400px;
+      }
+      article {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      h1 {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <!-- public'i kullanmıyoruz. Public proje tarafından biliniyor => app.use(express.static('public')); -->
+      <img src="/images/<%= imgUrl %>" alt="<%= name %>" />
+      <div>
+        <h1>Product Detail <%= id %></h1>
+        <p><b>Ürün Adı:</b> <%= name %></p>
+        <p><b>Ürün Fiyatı:</b> <%= price %> TL</p>
+        <% if (isActive) { %>
+        <span><b>Ürün satışta</b></span>
+        <% } else { %>
+        <span
+          ><b><u>Ürün satışta değil</u></b></span
+        >
+        <% } %>
+      </div>
+    </article>
+  </body>
+</html>

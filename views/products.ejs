@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js - Express.js</title>
+  </head>
+  <body>
+    <h1>Products Page</h1>
+    <p>Urun Adı: <%= products[0].name %></p>
+    <p>Urun Fiyatı: <%= products[0].price %> TL</p>
+    <hr />
+    <ul>
+      <% products.forEach(product => { %>
+      <li>Urun Adı: <%= product.name %> - Urun Fiyatı: <%= product.price %> TL</li>
+      <% }) %>
+    </ul>
+    <hr />
+    <ul>
+      <% products.forEach(product => { %> <% if (product.price > 10000) { %>
+      <a href="/products/<%= product.id %>">
+        <li>Urun Adı: <%= product.name %> - Urun Fiyatı: <%= product.price %> TL</li>
+      </a>
+      <% } %> <% }) %>
+    </ul>
+  </body>
+</html>
