@@ -4,10 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Node.js - Express.js</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h1>Products Page</h1>
-    <p>Urun Adı: <%= products[0].name %></p>
+    <%- include('partials/navbar') %>
+    <h1 class="font-semibold text-4xl mt-2 mb-5 px-5">Products Page</h1>
+    <main class="w-full flex flex-col gap-3 px-5">
+      <% products.forEach(product => { %> <%- include('partials/product', product) %> <% }) %>
+    </main>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- <p>Urun Adı: <%= products[0].name %></p>
     <p>Urun Fiyatı: <%= products[0].price %> TL</p>
     <hr />
     <ul>
@@ -22,6 +30,6 @@
         <li>Urun Adı: <%= product.name %> - Urun Fiyatı: <%= product.price %> TL</li>
       </a>
       <% } %> <% }) %>
-    </ul>
+    </ul> -->
   </body>
 </html>

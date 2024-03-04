@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/css/main.css" /> -->
+    <!-- <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Node.js - Express.js</title>
     <style>
-      img {
+      /* img {
         max-width: 400px;
       }
       article {
@@ -15,15 +18,16 @@
       }
       h1 {
         font-size: 40px;
-      }
+      } */
     </style>
   </head>
   <body>
-    <article>
+    <%- include('partials/navbar') %>
+    <article class="flex items-center">
       <!-- public'i kullanmıyoruz. Public proje tarafından biliniyor => app.use(express.static('public')); -->
-      <img src="/images/<%= imgUrl %>" alt="<%= name %>" />
+      <img class="max-w-[400px]" src="/images/<%= imgUrl %>" alt="<%= name %>" />
       <div>
-        <h1>Product Detail <%= id %></h1>
+        <h1 class="text-3xl font-semibold my-3">Product Detail <%= id %></h1>
         <p><b>Ürün Adı:</b> <%= name %></p>
         <p><b>Ürün Fiyatı:</b> <%= price %> TL</p>
         <% if (isActive) { %>

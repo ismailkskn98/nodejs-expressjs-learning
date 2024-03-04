@@ -1,0 +1,9 @@
+<a href="/products/<%= id %>">
+  <article class="border rounded flex items-center gap-2 py-2 px-3">
+    <img class="max-w-[200px]" src="/images/<%= imgUrl %>" alt="<%= name %>" />
+    <div class="grid grid-cols-1 grid-rows-4 gap-2">
+      <h2 class="font-semibold text-3xl row-span-3"><%= name %></h2>
+      <span class="font-semibold">Urun Fiyatı: <%= price %> TL</span>
+    </div>
+  </article>
+</a>
